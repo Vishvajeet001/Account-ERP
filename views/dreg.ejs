@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account ERP | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="up">
+        <div class="nav">
+            <div class="logoall">
+                <a href="/"><h1>Account</h1></a>
+                <a class="logo" href="/">
+                    <img class="logo" src="logo.png" alt="Home">
+                </a>
+            </div>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="#">Registrations</a>
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="/creg">Company Registration</a>
+                            </li>
+                            <li>
+                                <a href="/dreg">Director Registration</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">File Uploads</a>
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="/dfload">Director File Upload</a>
+                            </li>
+                            <li>
+                                <a href="/ofload">Other File Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Details</a>
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="/cdreg">Company Details</a>
+                            </li>
+                            <li>
+                                <a href="/qpage">Quotation Details</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a href="/signup"><button id="button1">Sign Up</button></a>
+            <a href="/login"><button>Log In</button></a>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper1">
+            <form action="/dreg" method="post">
+                <div class="wrapper-creg">
+                    <h1>Director Registration</h1>
+                    <div class="input-box">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="cI">
+                        <label>DOB :</label>
+                        <input type="date" name="DOB" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" name="MOBno" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="sharePattern" placeholder="Share Pattern" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="education" placeholder="Education" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="DINno" placeholder="DIN number" required>
+                    </div>
+                    <div class="cI">
+                        <label>Gender :</label>
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Male" name="Gender" value="Male" required>
+                        <label for="Female">Female</label>
+                        <input type="radio" id="Female" name="Gender" value="Female" required>
+                        <label for="Other">Other</label>
+                        <input type="radio" id="Other" name="Gender" value="Other" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="PANno" placeholder="PAN Card Number" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="occupation" placeholder="Occupation" required>
+                    </div>
+                    <button type="submit" class="btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
