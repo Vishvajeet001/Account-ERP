@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const collection = require('./config');
-const company_reg = require('./config');
-const director_reg = require('./config');
-const dfload = require('./config');
-const ofload = require('./config');
-const company_detail_reg = require('./config');
-const qpage_schema = require('./config');
+const company_reg = require('./schemas/company_reg');
+const director_reg = require('./schemas/director_reg');
+const dfload = require('./schemas/dfload');
+const ofload = require('./schemas/ofload');
+const company_detail_reg = require('./schemas/company_detail_reg');
+const qpage_schema = require('./schemas/qpage_schema');
 const multer = require('multer');
 
 const app = express();
@@ -55,6 +55,27 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('home');
+/*    company_reg.find()
+    .then(company => res.json(company))
+    .catch(err => res.json(err))*/
+});
+
+app.get('/api/companies', async (req, res) => {
+    try {
+        const companies = await company_reg.find();
+        res.json(companies);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
+app.get('/api/directors', async (req, res) => {
+    try {
+        const directors = await director_reg.find();
+        res.json(directors);
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });
 
 app.get('/login', (req, res) => {

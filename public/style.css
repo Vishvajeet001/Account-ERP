@@ -1,34 +1,39 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: "Poppins",sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
     background-color: #969bb1;
 }
 
-.up{
+.up {
     position: relative;
     z-index: 9999;
 }
-.nav{
+
+.nav {
     height: 13vh;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding : 15px 5%;
+    padding: 15px 5%;
     background-color: #24252A;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
+    position: sticky;
 }
 
-.logoall{
+.logoall {
     display: flex;
     margin-right: auto;
 }
 
-.nav li,.nav a,.nav button{
+.nav li,
+.nav a,
+.nav button {
     font-weight: 600;
     font-size: 25px;
     color: #edf0f1;
@@ -42,49 +47,52 @@ body{
     font-weight: 600;
     color: rgba(0, 136, 169, 1);
 }
-.logo{
+
+.logo {
     height: 80px;
     width: 100px;
     border-radius: 25%;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-ul li{
+ul li {
     display: inline-block;
     position: relative;
     padding: 20px 20px;
 
 }
 
-ul li ul.dropdown-list li{
+ul li ul.dropdown-list li {
     display: inline-block;
     padding: 10px 10px;
 }
 
-ul li ul.dropdown-list{
+ul li ul.dropdown-list {
     display: none;
     position: absolute;
 }
 
-ul li:hover ul.dropdown-list{
+ul li:hover ul.dropdown-list {
     display: block;
     backdrop-filter: blur(20px);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.dropdown-list li a,.dropdown-list li{
+.dropdown-list li a,
+.dropdown-list li {
     transition: all 0.3s ease 0s;
 }
 
-.dropdown-list li a:hover,.dropdown-list li :hover{
+.dropdown-list li a:hover,
+.dropdown-list li :hover {
     color: #0088a9;
 }
 
-.nav button{
+.nav button {
     padding: 9px 25px;
     background-color: rgba(0, 136, 169, 1);
     border: none;
@@ -94,16 +102,17 @@ ul li:hover ul.dropdown-list{
     margin-left: 20px;
 }
 
-.nav button:hover{
+.nav button:hover {
     background-color: #3d3f47;
     color: rgba(0, 255, 162, 0.8);
 }
 
-#button1{
+#button1 {
     background-color: transparent;
     color: rgba(0, 136, 169, 1);
 }
-#button1:hover{
+
+#button1:hover {
     background-color: #3d3f47;
     color: rgba(0, 255, 162, 0.8);
 }
@@ -113,13 +122,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     min-height: 87vh;
     background: url('bg.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.wrapper{
+.wrapper {
     width: 420px;
     color: #fff;
     background: transparent;
@@ -130,19 +141,19 @@ main {
     padding: 30px 40px;
 }
 
-.wrapper h1{
+.wrapper h1 {
     text-align: center;
     font-size: 36px;
 }
 
-.wrapper .input-box{
-    position:relative;
+.wrapper .input-box {
+    position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
 }
 
-.input-box input{
+.input-box input {
     width: 100%;
     height: 100%;
     border: none;
@@ -155,7 +166,7 @@ main {
     padding: 20px 45px 20px 20px;
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #fff;
 }
 
@@ -167,29 +178,29 @@ main {
     font-size: 20px;
 }
 
-.wrapper .remember-forgot{
+.wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     margin: -15px 0 15px;
     font-size: 14.5px;
 }
 
-.remember-forgot label input{
+.remember-forgot label input {
     accent-color: #fff;
     margin-right: 3px;
 }
 
-.remember-forgot a{
+.remember-forgot a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
-.remember-forgot a:hover{
+.remember-forgot a:hover {
     text-decoration: underline;
 }
 
-.wrapper .btn{
+.wrapper .btn {
     width: 100%;
     height: 45px;
     border: none;
@@ -204,29 +215,30 @@ main {
     font-weight: 600;
 }
 
-.wrapper .register-link{
+.wrapper .register-link {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
 }
 
-.register-link p a{
+.register-link p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link p a:hover{
+.register-link p a:hover {
     text-decoration: underline;
 }
 
-.registrations{
+.registrations {
     text-align: center;
     background: transparent;
     border: none;
 }
 
-.dropdown-list li select,.registrations option{
+.dropdown-list li select,
+.registrations option {
     font-weight: 600;
     font-size: 25px;
     color: #edf0f1;
@@ -234,11 +246,11 @@ main {
     text-decoration: none;
     border-radius: 50px;
     background-color: #24252A;
-    margin:-15px -20px;
-    border:none;
+    margin: -15px -20px;
+    border: none;
 }
 
-.wrapper-creg{
+.wrapper-creg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,14 +266,14 @@ main {
     padding: 30px 40px;
 }
 
-.wrapper-creg .input-box{
-    position:relative;
+.wrapper-creg .input-box {
+    position: relative;
     width: 50%;
     height: 50px;
     margin: 23px 0;
 }
 
-.wrapper-creg .btn{
+.wrapper-creg .btn {
     width: 100%;
     height: 45px;
     border: none;
@@ -276,11 +288,11 @@ main {
     font-weight: 600;
 }
 
-.wrapper-creg h1{
+.wrapper-creg h1 {
     font-size: 44px;
 }
 
-.cI{
+.cI {
     height: fit-content;
     width: 50%;
     display: inline-block;
@@ -291,16 +303,18 @@ main {
     color: #fff;
     padding: 14px 45px 14px 20px;
 }
-.cI input{
+
+.cI input {
     background: transparent;
-    border:none;
-    color:#fff;
+    border: none;
+    color: #fff;
     font-size: 16px;
 }
-.fI{
+
+.fI {
     height: fit-content;
     width: 50%;
-    display:inline;
+    display: inline;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
@@ -309,10 +323,10 @@ main {
     padding: 13px 45px 13px 20px;
 }
 
-.fI2{
+.fI2 {
     height: fit-content;
     width: 100%;
-    display:inline;
+    display: inline;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
@@ -320,3 +334,71 @@ main {
     color: #fff;
     padding: 13px 45px 13px 20px;
 }
+
+.container {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+	transform: translate(0%, 0%);
+    margin-top: 20px;
+}
+
+#h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+table {
+    height: 550px;
+    width: 920px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    font-size: large;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+        padding-top: 20px;
+        padding-bottom: 20px;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+

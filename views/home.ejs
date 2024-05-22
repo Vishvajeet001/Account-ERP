@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account ERP</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <header class="up">
         <div class="nav">
             <div class="logoall">
-                <a href="/"><h1>Account</h1></a>
+                <a href="/">
+                    <h1>Account</h1>
+                </a>
                 <a class="logo" href="/">
                     <img class="logo" src="logo.png" alt="Home">
                 </a>
@@ -20,30 +24,30 @@
                     <li><a href="#">Registrations</a>
                         <ul class="dropdown-list">
                             <li>
-                                <a href="/creg">Company Registration</a>
+                                <a href="/creg">Company</a>
                             </li>
                             <li>
-                                <a href="/dreg">Director Registration</a>
+                                <a href="/dreg">Director</a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="#">File Uploads</a>
                         <ul class="dropdown-list">
                             <li>
-                                <a href="/dfload">Director File Upload</a>
+                                <a href="/dfload">Director's</a>
                             </li>
                             <li>
-                                <a href="/ofload">Other File Upload</a>
+                                <a href="/ofload">Other Files</a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="#">Details</a>
                         <ul class="dropdown-list">
                             <li>
-                                <a href="/cdreg">Company Details</a>
+                                <a href="/cdreg">Company</a>
                             </li>
                             <li>
-                                <a href="/qpage">Quotation Details</a>
+                                <a href="/qpage">Quotation</a>
                             </li>
                         </ul>
                     </li>
@@ -53,7 +57,93 @@
             <a href="/login"><button>Log In</button></a>
         </div>
     </header>
-    <main class="mid"></main>
+    <main>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <h1 id="h1">Company Details</h1>
+                </thead>
+                <tbody id="companyTable">
+
+                </tbody>
+            </table>
+
+            <script>
+                async function fetchCompanyData() {
+                    const response = await fetch('/api/companies');
+                    const companies = await response.json();
+                    const table = document.getElementById('companyTable');
+
+                    companies.forEach(company => {
+                        const data = [
+                            { key: 'Name', value: company.name },
+                            { key: 'Type', value: company.type },
+                            { key: 'Purpose', value: company.purpose },
+                            { key: 'Paid Capital', value: company.paidCapital },
+                            { key: 'Authorized Capital', value: company.authorizedCapital },
+                            { key: 'Reservation', value: company.reservation },
+                            { key: 'Address', value: company.address }
+                        ];
+
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                    <th>${item.key}</th>
+                    <td>${item.value}</td>
+                `;
+                            table.appendChild(row);
+                        });
+                    });
+                }
+
+                fetchCompanyData();
+            </script>
+        </div>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <h1 id="h1">Director Details</h1>
+                </thead>
+                <tbody id="directorTable">
+
+                </tbody>
+            </table>
+
+            <script>
+                async function fetchDirectorData() {
+                    const response = await fetch('/api/directors');
+                    const directors = await response.json();
+                    const table = document.getElementById('directorTable');
+
+                    directors.forEach(director => {
+                        const data = [
+                            { key: 'Name', value: director.name },
+                            { key: 'DOB', value: director.DOB },
+                            { key: 'Gender', value: director.Gender },
+                            { key: 'Mobile No.', value: director.MOBno },
+                            { key: 'Email', value: director.email },
+                            { key: 'DIN No.', value: director.DINno },
+                            { key: 'PAN No.', value: director.PANno },
+                            { key: 'Education', value: director.education },
+                            { key: 'Occupation', value: director.occupation },
+                            { key: 'Share Pattern', value: director.sharePattern }
+                        ];
+
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                    <th>${item.key}</th>
+                    <td>${item.value}</td>
+                `;
+                            table.appendChild(row);
+                        });
+                    });
+                }
+                fetchDirectorData();
+            </script>
+        </div>
+    </main>
     <footer class="down"></footer>
 </body>
+
 </html>
