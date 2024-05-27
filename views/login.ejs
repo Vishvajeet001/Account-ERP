@@ -16,7 +16,7 @@
                     <img class="logo" src="logo.png" alt="Home">
                 </a>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" hidden>
                 <ul>
                     <li><a href="#">Registrations</a>
                         <ul class="dropdown-list">
@@ -66,14 +66,14 @@
                     <input type="password" name="password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt'></i>                
                 </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
-                    <a href="/fgpass">Forgot password?</a>
-                </div>
                 <button type="submit" class="btn">Login</button>
                 <div class="register-link">
                     <p>Don't have an account?
                     <a href="/signup">Sign Up</a></p>
+                </div><br>
+                <div class="remember-forgot">
+                    <label hidden><input type="checkbox">Remember me</label>
+                    <a href="/fgpass">Forgot password?</a>
                 </div>
             </form>
         </div>

@@ -6,20 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account ERP</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        .container {
+            position: relative;
+            max-width: 1200px; /* Adjust as needed */
+            width: 100%;
+            background: linear-gradient(to right, #add8e6, #5aa1ee, #5b6be9); /* Adjust colors as needed */
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L48,208C96,192,192,160,288,144C384,128,480,128,576,138.7C672,149,768,171,864,176C960,181,1056,171,1152,160C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x bottom;
+            z-index: -1;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+            color: #4c1212;
+            background: transparent;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 10px); /* Adjust as needed */
+            animation: fadeIn 1.5s ease-in-out;
+            text-align: justify;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            text-align: center;
+            color: #432106;
+        }
+        p {
+            margin: 12px 0;
+            line-height: 1.55;
+        }
+    </style>
 </head>
 
 <body>
     <header class="up">
         <div class="nav">
             <div class="logoall">
-                <a href="/home">
+                <a href="/">
                     <h1>Account</h1>
                 </a>
-                <a class="logo" href="/home">
+                <a class="logo" href="/">
                     <img class="logo" src="logo.png" alt="Home">
                 </a>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" hidden>
                 <ul>
                     <li><a href="#">Registrations</a>
                         <ul class="dropdown-list">
@@ -53,12 +99,40 @@
                     </li>
                 </ul>
             </div>
-            <a href="/signup" hidden><button id="button1">Sign Up</button></a>
-            <a href="/"><button>Logout</button></a>
+            <a href="/signup"><button id="button1">Sign Up</button></a>
+            <a href="/login"><button>Log In</button></a>
         </div>
     </header>
     <main>
         <div class="container">
+            <div class="wave"></div>
+            <h1>Account ERP Project Overview</h1>
+            <div class="content-wrapper">
+                <div class="content">
+                    <p>Welcome to the Account ERP project, a comprehensive solution designed to streamline and enhance your business processes. This project encompasses a variety of modules that cater to different aspects of business management, ensuring efficiency, accuracy, and ease of use. Below, you'll find detailed descriptions of each module and its features.</p>
+    
+                    <p>The Customer Panel module includes features for user authentication and registration. Users can log in using their email and password, reset their passwords by providing their email, password, and confirming the new password, or sign up by entering their email, password, and confirming the password.</p>
+    
+                    <p>In the Company Registration module, users can register their company by providing information such as the company's purpose, type, paid capital, authorized capital, and registered address. Additionally, users can reserve the company name and upload address proof.</p>
+    
+                    <p>The Director Registration module collects essential information about directors, including their name, date of birth, mobile number, share pattern, education, DIN number, gender, email, PAN card number, and occupation.</p>
+                </div>
+                <div class="content">
+                    <p>The Director File Upload module facilitates the upload of necessary documents for directors. This includes PAN, address proof, passport, driving license, voting card, bank statement, utility bill, passport photo, and director's signature.</p>
+    
+                    <p>Other Document Uploads allow users to upload various documents and manage No Objection Certificates (NOCs), including downloading and uploading NOCs.</p>
+    
+                    <p>The Company Detail Registration module captures detailed information about the company. This includes the purpose of the company, email, mobile number, registered address, objectives, director/shareholder details, and authorized and paid capital details.</p>
+    
+                    <p>Finally, the Quotation module enables the creation of quotations. Users can enter company details, contact information, purpose, quotation number, expiry date, and item details including description, print quantity, and total amount.</p>
+                    <a style="background-color: transparent; text-decoration: none;" class="nav" href="/signup"><button id="button1">Sign Up</button></a>
+
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="container" hidden>
             <table class="table">
                 <thead>
                     <h1 id="h1">Company Details</h1>
@@ -99,7 +173,7 @@
                 fetchCompanyData();
             </script>
         </div>
-        <div class="container">
+        <div class="container" hidden>
             <table class="table">
                 <thead>
                     <h1 id="h1">Director Details</h1>

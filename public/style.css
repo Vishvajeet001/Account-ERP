@@ -180,7 +180,8 @@ main {
 
 .wrapper .remember-forgot {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin: -15px 0 15px;
     font-size: 14.5px;
 }

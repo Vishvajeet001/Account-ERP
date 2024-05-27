@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const alert = require('alert');
 const bcrypt = require('bcrypt');
 const collection = require('./config');
 const company_reg = require('./schemas/company_reg');
@@ -54,10 +55,14 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home_all');
 /*    company_reg.find()
     .then(company => res.json(company))
     .catch(err => res.json(err))*/
+});
+
+app.get('/home', async (req, res) => {
+    res.render('home');
 });
 
 app.get('/api/companies', async (req, res) => {
